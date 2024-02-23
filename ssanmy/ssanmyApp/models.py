@@ -1,7 +1,4 @@
 from django.db import models
-
-# Create your models here.
-
 # After This Column, Its pasted from modelpy.txt
 
 # This is an auto-generated Django model module.
@@ -59,7 +56,7 @@ class Image(models.Model):
 class Post(models.Model):
     post_id = models.BigIntegerField(db_column='POST_ID', primary_key=True)  # Field name made lowercase.
     category_id = models.BigIntegerField(db_column='CATEGORY_ID')  # Field name made lowercase.
-    post_title = models.CharField(db_column='POST_TITLE', max_length=255)  # Field name made lowercase.
+    post_title = models.CharField(db_column='POST_TITLE', max_length=300)  # Field name made lowercase.
     post_content = models.TextField(db_column='POST_CONTENT')  # Field name made lowercase.
     post_created = models.DateTimeField(db_column='POST_CREATED')  # Field name made lowercase.
     post_clicked = models.IntegerField(db_column='POST_CLICKED', blank=True, null=True)  # Field name made lowercase.
@@ -68,6 +65,12 @@ class Post(models.Model):
         managed = True
         db_table = 'post'
 
+class testPost(models.Model):
+    test_title = models.CharField(db_column='POST_TITLE', max_length=400)  # Field name made lowercase.
+
+    class Meta:
+        managed = True
+        db_table = 'testPost'
 
 class Postcategory(models.Model):
     mapping_id = models.BigIntegerField(db_column='MAPPING_ID', primary_key=True)  # Field name made lowercase.
