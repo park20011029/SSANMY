@@ -1,7 +1,4 @@
 from django.db import models
-
-# Create your models here.
-
 # After This Column, Its pasted from modelpy.txt
 
 # This is an auto-generated Django model module.

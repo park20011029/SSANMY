@@ -1,3 +1,1 @@
 # SSAMY
-
-test
