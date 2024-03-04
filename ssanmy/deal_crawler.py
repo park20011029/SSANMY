@@ -14,6 +14,10 @@ import requests
 from bs4 import BeautifulSoup
 from ssanmyApp.models import testPost
 
+
+from apscheduler.schedulers.background import BackgroundScheduler
+scheduler = BackgroundScheduler()
+
 def find_obj():
     url = "https://www.fmkorea.com/index.php?mid=hotdeal&category=1254381811&page=1"
     response = requests.get(url)
@@ -26,7 +30,14 @@ def find_obj():
         data.append(del_brace(i.get_text().strip()))
     return data
 
-if __name__=='__main__':
+@scheduler.scheduled_job('cron', second='*/10')
+def start_crawl():
+    print('crawling data...')
     obj = find_obj()
     for i in obj:
         testPost(test_title = i).save()
+
+scheduler.start()
+
+if __name__=='__main__':
+    start_crawl()
