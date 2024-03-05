@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+<h3>인기 카테고리</h3>
+</div>
+{% if mods_list %}
+    <ul>
+    {% for mod in mods_list %}
+        <li><a href="/ssanmy/{{ mod.id }}/">{{ mod.test_title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>상품이 없습니다.</p>
+{% endif %}
+{% endblock %}
