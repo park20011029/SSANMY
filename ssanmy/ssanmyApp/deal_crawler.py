@@ -5,17 +5,17 @@ def del_brace(str):
     return str
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ssanmy.settings")
-import django
-django.setup()
+#import django
+#django.setup()
 
 from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
+
 from ssanmyApp.models import testPost
-
-
 from apscheduler.schedulers.background import BackgroundScheduler
+
 scheduler = BackgroundScheduler()
 
 def find_obj():
@@ -30,14 +30,13 @@ def find_obj():
         data.append(del_brace(i.get_text().strip()))
     return data
 
-@scheduler.scheduled_job('cron', second='*/10')
-def start_crawl():
+def job():
     print('crawling data...')
     obj = find_obj()
     for i in obj:
         testPost(test_title = i).save()
 
-scheduler.start()
-
-if __name__=='__main__':
-    start_crawl()
+def start_crawl():
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(job, 'interval', seconds=10, id='start_crawl')
+    scheduler.start()
