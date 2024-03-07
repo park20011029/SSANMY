@@ -1,0 +1,9 @@
+body{background: #E7E8EA;}
+
+.main{background: #FFFFFF; height: 90vh;width: 90vw;
+    margin: auto; margin-top: 5vh;}
+
+.p_categori_word{font-family: Inter; font-size: 1.8em; color: #000;
+    padding-top: 6vh; padding-left: 5vw;}
+
+.p_categori{}
