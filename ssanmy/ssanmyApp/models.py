@@ -55,10 +55,12 @@ class Image(models.Model):
 class Post(models.Model):
     post_id = models.BigIntegerField(db_column='POST_ID', primary_key=True)  # Field name made lowercase.
     category_id = models.BigIntegerField(db_column='CATEGORY_ID')  # Field name made lowercase.
+    comp_id = models.ForeignKey(Company, models.DO_NOTHING, db_column='COMP_ID')
     post_title = models.CharField(db_column='POST_TITLE', max_length=300)  # Field name made lowercase.
     post_content = models.TextField(db_column='POST_CONTENT')  # Field name made lowercase.
     post_created = models.DateTimeField(db_column='POST_CREATED')  # Field name made lowercase.
     post_clicked = models.IntegerField(db_column='POST_CLICKED', blank=True, null=True)  # Field name made lowercase.
+    post_url = models.TextField(db_column='POST_URL')
 
     class Meta:
         managed = True
@@ -79,17 +81,6 @@ class Postcategory(models.Model):
     class Meta:
         managed = True
         db_table = 'postcategory'
-
-
-class Site(models.Model):
-    site_id = models.CharField(db_column='SITE_ID', primary_key=True, max_length=255)  # Field name made lowercase.
-    post = models.ForeignKey(Post, models.DO_NOTHING, db_column='POST_ID')  # Field name made lowercase.
-    comp = models.ForeignKey(Company, models.DO_NOTHING, db_column='COMP_ID', blank=True, null=True)  # Field name made lowercase.
-    site_url = models.TextField(db_column='SITE_URL')  # Field name made lowercase.
-
-    class Meta:
-        managed = True
-        db_table = 'site'
 
 
 class User(models.Model):
