@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<div>
-<h3>인기 카테고리</h3>
-</div>
+<div class="main">
+<div class="p_categori_word">인기 카테고리</div>
 {% if mods_list %}
     <ul>
     {% for mod in mods_list %}
@@ -12,4 +11,5 @@
 {% else %}
     <p>상품이 없습니다.</p>
 {% endif %}
+</div>
 {% endblock %}
