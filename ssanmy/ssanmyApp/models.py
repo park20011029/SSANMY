@@ -54,7 +54,6 @@ class Image(models.Model):
 
 class Post(models.Model):
     post_id = models.BigIntegerField(db_column='POST_ID', primary_key=True)  # Field name made lowercase.
-    category_id = models.BigIntegerField(db_column='CATEGORY_ID')  # Field name made lowercase.
     comp_id = models.ForeignKey(Company, models.DO_NOTHING, db_column='COMP_ID')
     post_title = models.CharField(db_column='POST_TITLE', max_length=300)  # Field name made lowercase.
     post_content = models.TextField(db_column='POST_CONTENT')  # Field name made lowercase.
