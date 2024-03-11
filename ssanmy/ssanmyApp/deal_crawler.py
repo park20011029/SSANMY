@@ -24,7 +24,6 @@ def is_unicord(str):
         if ord(str[i]) >= 0 and ord(str[i]) <= 65535:
             str2 += str[i]
 
-        str2 = del_brace_quasar(str2)
     return str2
 
 import os
@@ -55,7 +54,7 @@ def find_fmkor():
     return data
 
 def find_quasar():
-    url = "https://quasarzone.com/bbs/qb_saleinfo"
+    url = "https://quasarzone.com/bbs/qb_saleinfo?_method=post&type=&page=1&_token=qqltYTHszsDxg2JFwC1vLKVL55G4fYaPDdKdLsMD&category=PC%2F%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4&popularity=&kind=subject&keyword=&sort=num%2C+reply&direction=DESC"
     response = requests.get(url)
 
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -63,7 +62,19 @@ def find_quasar():
     title = soup.find_all('span', attrs={"class": "ellipsis-with-reply-cnt"})
     data = []
     for i in title:
-        data.append(is_unicord(i.get_text().strip()))
+        data.append(del_brace_quasar(is_unicord(i.get_text().strip())))
+    return data
+
+def find_coolenjoy():
+    url = "https://coolenjoy.net/bbs/jirum?sca=PC%EA%B4%80%EB%A0%A8"
+    response = requests.get(url)
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    title = soup.find_all('a', attrs={"class": "na-subject"})
+    data = []
+    for i in title:
+        data.append(del_brace_quasar(is_unicord(i.get_text().strip())))
     return data
 
 def job():
@@ -75,6 +86,10 @@ def job():
     obj2 = find_quasar()
     for j in obj2:
         testPost(test_title = j).save()
+    print('crawling data from coolenjoy...')
+    obj3 = find_coolenjoy()
+    for k in obj3:
+        testPost(test_title=k).save()
 
 def start_crawl():
     scheduler = BackgroundScheduler()
