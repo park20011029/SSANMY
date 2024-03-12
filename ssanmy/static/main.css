@@ -6,4 +6,5 @@ body{background: #E7E8EA;}
 .p_categori_word{font-family: Inter; font-size: 1.8em; color: #000;
     padding-top: 6vh; padding-left: 5vw;}
 
-.p_categori{}
+.p_categori{background: #FFFFFF; height: 30vh;width: 90vw;
+    margin: auto; margin-top: 5vh;}
