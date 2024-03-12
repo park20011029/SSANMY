@@ -53,3 +53,4 @@
 #   ex) Co-authored-by: ANOTHER-NAME <ANOTHER-NAME@EXAMPLE.COM>
 # --- How To Use ---
 #   git config --global commit.template ./.gitmessage.txt
+# sd
