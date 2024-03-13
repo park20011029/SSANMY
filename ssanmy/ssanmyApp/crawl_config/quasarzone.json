@@ -1,0 +1,16 @@
+{
+  "name" : "quasarzone.com",
+  "url" : "https://quasarzone.com/bbs/qb_saleinfo",
+  "date_encoded" : "%Y.%m.%d %H:%M",
+
+  "parsers" : {
+    "container" : "market-type-list",
+    "connector" : "subject-link"
+  },
+
+  "attrs": {
+    "title" : "div.common-view-wrap.market-info-view-wrap > div > dl > dt > div:nth-child(1) > h1",
+    "url" : "div.common-view-wrap.market-info-view-wrap > div > dl > dd > table > tr > td > a",
+    "created" : "#content > div.sub-content-wrap > div.left-con-wrap > div.common-view-wrap.market-info-view-wrap > div > dl > dt > div.util-area > p > span"
+  }
+}
