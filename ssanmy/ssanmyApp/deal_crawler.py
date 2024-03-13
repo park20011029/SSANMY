@@ -45,8 +45,6 @@ from ssanmyApp.models import Postcategory
 from ssanmyApp.models import Category
 from apscheduler.schedulers.background import BackgroundScheduler
 
-scheduler = BackgroundScheduler()
-
 def set_to_arr(title):
     title_arr = []
     for i in title:
@@ -188,6 +186,5 @@ def get_lib():
 
 def start_crawl():
     scheduler = BackgroundScheduler()
-    job()
-    scheduler.add_job(job, 'interval', minutes=30, id='start_crawl')
+    scheduler.add_job(job, 'interval', minutes=30, id='start_crawl', next_run_time=(datetime.datetime.now() + datetime.timedelta(seconds=10)))
     scheduler.start()
