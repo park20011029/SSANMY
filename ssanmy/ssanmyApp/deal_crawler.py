@@ -63,7 +63,7 @@ def find_main(url, attrs):
     return data
 
 def find_by_parser(response, parser, retry_sec = 2):
-    time.sleep(retry_sec)
+    #time.sleep(retry_sec)
     try:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
@@ -89,7 +89,7 @@ def find_by_parser(response, parser, retry_sec = 2):
         return selected.get_text().strip()
 
 def link_hrefs(main_url, parsers, retry_sec = 2):
-    time.sleep(retry_sec)
+    #time.sleep(retry_sec)
     try:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
@@ -158,7 +158,7 @@ def job():
         for url in link_hrefs(main_url, parsers):
             if url is not None:
                 data = find_attrs(url, attrs)
-                if data is not None:
+                if data is not None and not(Post.objects.filter(post_title__contains=data[0])):
                     new_date = datetime.datetime.strptime(data[2], date_encoded)
                     data[2] = str(new_date.strftime('%Y-%m-%d %H:%M'))
                     save_db(data)
