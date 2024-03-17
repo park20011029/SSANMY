@@ -1,0 +1,22 @@
+body{background: #E7E8EA;}
+
+.main{background: #FFFFFF; height: 90vh;width: 90vw;
+    margin: auto; margin-top: 5vh;}
+
+.p_categori_word{font-family: Inter; font-size: 2em; color: #000;
+    padding-top: 6vh; padding-left: 5vw;}
+
+.p_categori{background: #FFFFFF; height: 25vh;width: 80vw;
+    margin: 5vh 5vw 5vh 5vw; display: flex; justify-content: space-around;}
+
+.categori_box{
+    width: 14vw;
+    display: flex;
+    flex-direction: column; justify-content: space-between; align-items: center;}
+
+.categori_circle{
+    width: 10vw; height: 10vw; border-radius: 5vw; background: #E7E8EA;}
+
+.categori_name{
+    color: #000; font-family: Inter; font-size: 1.5vw; font-style: normal;
+    line-height: normal; text-align: center;}
