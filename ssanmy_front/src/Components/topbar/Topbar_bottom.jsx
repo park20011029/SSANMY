@@ -1,5 +1,6 @@
 import React from "react";
-import "../../styleCss/Topbar.css"
+import "../../styleCss/Topbar.css";
+
 function topbar_bottom() {
     return (
         <div class="notFix">

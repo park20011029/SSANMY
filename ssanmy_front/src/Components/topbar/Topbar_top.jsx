@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import "../../styleCss/Topbar.css"
+import "../../styleCss/Topbar.css";
+
 function Topbar_top() {
           const [isFixed, setIsFixed] = useState(false);
 
