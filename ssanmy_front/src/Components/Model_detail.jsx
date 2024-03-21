@@ -25,11 +25,16 @@ function Model_detail () {
                 COMMENT
             </div>
             <hr/>
-
-            <div className="">
-                
+            <div className="comment">
+                <div className="comment_box">
+                    <div className="comment_profile">
+                        <img src="https://projectmanager4.s3.ap-northeast-2.amazonaws.com/user+1.svg" alt="로고"/>
+                    </div>
+                    <div className="comment_detail">
+                        이거 짱좋음
+                    </div>
+                </div>
             </div>
-
         </div>
     )
 }

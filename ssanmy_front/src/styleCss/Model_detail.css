@@ -1,5 +1,5 @@
-.model_main{background: #FFFFFF; height: 150vh;width: 90vw;
-    margin: auto; margin-top: 5vh; padding-top: 7vh;
+.model_main{background: #FFFFFF; height: auto; width: 90vw;
+    margin: auto; margin-top: 5vh; padding-top: 7vh; padding-bottom: 7vh;
 }
 
 .model_name{
@@ -44,4 +44,24 @@ hr{
     border-width: 4px;
     width: 90%;
     border-color: #000;
+}
+
+.comment{
+    height: auto; width: 90vw; padding: 3vw;
+}
+.comment_box {
+    height: 100%; width: 100%;
+    padding: 1vw;
+    border-radius: 10px; border: 2px solid #000;
+    display: flex;
+}
+.comment_profile {
+    padding: 1vw;
+}
+.comment_profile img{
+    height: 6vh;
+    width: 6vh;
+}
+.comment_detail {
+    margin: auto;
 }
