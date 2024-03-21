@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
-import Topbar from "./Components/Topbar"
 import {RecoilRoot} from 'recoil';
 import {BrowserRouter as Router, Routes, Route, Navigate, useLocation, BrowserRouter} from 'react-router-dom';
 import Main_detail from "./Components/Main_detail";
 import Login from "./Components/Login";
+import Topbar from "./Pages/Topbar";
+import Categori from "./Pages/Categori";
 import Footer from "./Components/Footer";
 import Model_detail from "./Components/Model_detail";
 
