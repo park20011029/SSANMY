@@ -16,6 +16,7 @@ function App() {
               <Routes>
                   <Route path="/main" element={<Main_detail/>}/>
                   <Route path="/login" element={<Login/>}/>
+                  <Route path="/categori" element={<Categori/>}/>
                   <Route path="/model" element={<Model_detail/>}/>
               </Routes>
           </BrowserRouter>
