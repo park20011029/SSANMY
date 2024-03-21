@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { LiaCommentDots } from "react-icons/lia";
 
 const SortHr = styled.hr`
   background: rgba(0, 0, 0, 0.20);
@@ -34,6 +35,7 @@ const ItemDetail = styled.div`
 
 const ItemTitle = styled.div`
   color: rgba(0, 0, 0, 0.80);
+  display: flex;
   font-family: Inter;
   font-size: 1vw;
   font-style: normal;
@@ -101,6 +103,18 @@ const CoupangLogo = styled.img`
   height: 2vh;
 `;
 
+const Icon = styled.div`
+  margin-left: 0.5vw;
+  margin-top: -0.2vw;
+  text-align: center;
+  display: flex;
+  width: 2.3vw;
+  height: 2.3vh;
+  font-size: 1vw;
+  text-decoration-line: underline;
+`;
+
+
 function Inventory(){
     return(
         <>
@@ -111,6 +125,9 @@ function Inventory(){
                 <ItemDetail>
                     <ItemTitle>
                         1000R 커브드 모니터LC32T5  52FDKXKR
+                        <Icon>
+                            <LiaCommentDots size="2vw"/> 5
+                        </Icon>
                     </ItemTitle>
                     <ItemDescription>
                         이걸 시키면 게임 실력향상
@@ -130,7 +147,7 @@ function Inventory(){
                     </div>
                     <div>
                         <CoupangLogo src="https://projectmanager4.s3.ap-northeast-2.amazonaws.com/coupang.svg"/>
-                    </div>
+                    </div>=
                 </Store>
             </InventroyComponent>
             <SortHr/>
