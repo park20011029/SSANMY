@@ -1,5 +1,6 @@
 import React from "react";
-import "../styleCss/Main.css"
+import "../styleCss/Main.css";
+
 function Main_detail() {
     return (
         <div className="main">
@@ -26,15 +27,21 @@ function Main_detail() {
                     <div className="categori_name">카테고리</div>
                 </div>
             </div>
-            {/*{% if mods_list %}*/}
-            <ul>
-                {/*{% for mod in mods_list %}*/}
-                {/*<li><a href="/ssanmy/{{ mod.id }}/">{{mod.post_title}}</a></li>*/}
-                {/*{% endfor %}*/}
-            </ul>
-            {/*{% else %}*/}
-            <p>상품이 없습니다.</p>
-            {/*{% endif %}*/}
+            <div className="ex_mods">
+                <div className="ex_mod_box"></div>
+                <div className="ex_mod_box"></div>
+                <div className="ex_mod_box"></div>
+                <div className="ex_mod_box"></div>
+                <div className="ex_mod_box"></div>
+                {/*{% if mods_list %}*/}
+                {/*<ul>*/}
+                    {/*{% for mod in mods_list %}*/}
+                    {/*<li><a href="/ssanmy/{{ mod.id }}/">{{mod.post_title}}</a></li>*/}
+                    {/*{% endfor %}*/}
+                {/*</ul>*/}
+                {/*{% else %}*/}
+                {/*{% endif %}*/}
+            </div>
         </div>
 
     )

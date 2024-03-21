@@ -1,9 +1,9 @@
 body{background: #E7E8EA;}
 
-.main{background: #FFFFFF; height: 90vh;width: 90vw;
+.main{background: #FFFFFF; height: 80vh;width: 90vw;
     margin: auto; margin-top: 5vh;}
 
-.p_categori_word{font-family: Inter; font-size: 2em; color: #000;
+.p_categori_word{font-family: Inter; font-size: 2vw; color: #000;
     padding-top: 6vh; padding-left: 5vw;}
 
 .p_categori{background: #FFFFFF; height: 25vh;width: 80vw;
@@ -20,3 +20,18 @@ body{background: #E7E8EA;}
 .categori_name{
     color: #000; font-family: Inter; font-size: 1.5vw; font-style: normal;
     line-height: normal; text-align: center;}
+
+.ex_mods{
+    width: 80vw;
+    margin: auto; margin-top: 5vh; margin-bottom: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ex_mod_box{
+    width: 15vw;
+    height: 15vw;
+    background: #D9D9D9;
+    border-radius: 2vw;
+}
+
