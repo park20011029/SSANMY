@@ -1,16 +1,6 @@
 import React from "react";
 import "../styleCss/Main.css";
 
-const example_mods = ['제목1번', '제목2번', '제목3번', '제목4번', '제목5번'];
-{example_mods.map((titleElem, index) => {
-    return (
-    <div key={index}>
-        <h2>{titleElem}</h2>
-    </div>
-    );
-})}
-
-
 function Main_detail() {
     return (
         <div className="main">
